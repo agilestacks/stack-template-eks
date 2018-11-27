@@ -1,0 +1,67 @@
+---
+version: 1
+kind: stack
+meta:
+  name: k8s-eks-complete:1
+  brief: Complete EKS stack
+
+components:
+- name: stack-k8s-eks
+  source:
+    dir: stack-k8s-eks
+- name: tiller
+  source:
+    dir: components/tiller
+- name: acm
+  source:
+    dir: components/acm
+- name: traefik
+  source:
+    dir: components/traefik
+- name: dex
+  source:
+    dir: components/dex
+- name: kube-dashboard
+  source:
+    dir: components/kube-dashboard
+
+requires:
+- aws
+
+lifecycle:
+  verbs: [deploy, undeploy]
+  order:
+  - stack-k8s-eks
+  - tiller
+  - acm
+  - traefik
+  - dex
+  - kube-dashboard
+  requires:
+    optional:
+    - component.ingress.ssl.enabled:acm
+
+outputs:
+- name: stack-k8s-eks:dns.domain
+- name: stack-k8s-eks:kubernetes.flavor
+- name: stack-k8s-eks:kubernetes.api.endpoint
+- name: stack-k8s-eks:kubernetes.api.caCert
+- name: stack-k8s-eks:kubernetes.eks.cluster
+- name: stack-k8s-eks:cloud.region
+- name: stack-k8s-eks:cloud.availabilityZone
+- name: stack-k8s-eks:cloud.availabilityZones
+- name: stack-k8s-eks:cloud.bucket
+- name: stack-k8s-eks:cloud.role.master
+- name: stack-k8s-eks:cloud.role.worker
+- name: stack-k8s-eks:cloud.vpc.id
+- name: stack-k8s-eks:cloud.vpc.cidr
+- name: stack-k8s-eks:cloud.vpc.worker.subnet.id
+- name: stack-k8s-eks:cloud.vpc.worker.subnet.ids
+- name: stack-k8s-eks:cloud.vpc.worker.sg.id
+- name: stack-k8s-eks:cloud.iam.worker.instanceProfile
+- name: traefik:component.ingress.protocol
+- name: traefik:component.ingress.fqdn
+- name: traefik:component.ingress.ssoFqdn
+- name: traefik:component.ingress.urlPrefix
+- name: traefik:component.ingress.ssoUrlPrefix
+- name: kube-dashboard:component.kubernetes-dashboard.url
