@@ -50,7 +50,6 @@ outputs:
 - name: stack-k8s-eks:cloud.region
 - name: stack-k8s-eks:cloud.availabilityZone
 - name: stack-k8s-eks:cloud.availabilityZones
-- name: stack-k8s-eks:cloud.bucket
 - name: stack-k8s-eks:cloud.role.master
 - name: stack-k8s-eks:cloud.role.worker
 - name: stack-k8s-eks:cloud.vpc.id
