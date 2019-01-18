@@ -40,6 +40,7 @@ lifecycle:
   requires:
     optional:
     - component.ingress.ssl.enabled:acm
+    - component.kubernetes-dashboard.enabled:kube-dashboard
 
 outputs:
 - name: stack-k8s-eks:dns.domain
