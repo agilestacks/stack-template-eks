@@ -19,13 +19,11 @@ HUB_OPTS ?=
 
 hub := hub -d --aws_region=$(STATE_REGION)
 
-ifdef HUB_API
 ifdef HUB_TOKEN
 ifdef HUB_ENVIRONMENT
 ifdef HUB_STACK_INSTANCE
 HUB_LIFECYCLE_OPTS ?= --hub-environment "$(HUB_ENVIRONMENT)" --hub-stack-instance "$(HUB_STACK_INSTANCE)"
 HUB_LIFECYCLE_DEPLOY_OPTS ?= --hub-save-stack-instance-outputs=true
-endif
 endif
 endif
 endif
