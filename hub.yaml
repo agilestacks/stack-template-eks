@@ -24,6 +24,9 @@ components:
 - name: kube-dashboard
   source:
     dir: components/kube-dashboard
+- name: automation-tasks-namespace
+  source:
+    dir: components/namespace
 
 requires:
 - aws
@@ -37,6 +40,7 @@ lifecycle:
   - traefik
   - dex
   - kube-dashboard
+  - automation-tasks-namespace
   requires:
     optional:
     - component.ingress.ssl.enabled:acm

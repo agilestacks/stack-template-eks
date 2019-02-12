@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := deploy
 
-export DOMAIN_NAME ?= eks-1.kubernetes.delivery
+export DOMAIN_NAME ?= eks-1.cloud-account-name.superhub.io
 
 export STATE_BUCKET ?= agilestacks.cloud-account-name.superhub.io
 export STATE_REGION ?= us-east-2

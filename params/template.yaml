@@ -49,3 +49,9 @@ parameters:
     fromEnv: DEX_OKTA_APP_CLIENT_ID
   - name: okta.clientSecret
     fromEnv: DEX_OKTA_APP_CLIENT_SECRET
+
+- name: component.namespace
+  component: automation-tasks-namespace
+  parameters:
+  - name: name
+    value: automation-tasks
