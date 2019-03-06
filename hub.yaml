@@ -15,6 +15,9 @@ components:
 - name: acm
   source:
     dir: components/acm
+- name: cert-manager
+  source:
+    dir: components/cert-manager
 - name: traefik
   source:
     dir: components/traefik
@@ -37,13 +40,15 @@ lifecycle:
   - stack-k8s-eks
   - tiller
   - acm
+  - cert-manager
   - traefik
   - dex
   - kube-dashboard
   - automation-tasks-namespace
   requires:
     optional:
-    - component.ingress.ssl.enabled:acm
+    - component.acm.enabled:acm
+    - component.cert-manager.enabled:cert-manager
     - component.kubernetes-dashboard.enabled:kube-dashboard
 
 outputs:
