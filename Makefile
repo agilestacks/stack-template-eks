@@ -22,8 +22,8 @@ hub := hub -d --aws_region=$(STATE_REGION)
 ifdef HUB_TOKEN
 ifdef HUB_ENVIRONMENT
 ifdef HUB_STACK_INSTANCE
-HUB_LIFECYCLE_OPTS ?= --hub-environment "$(HUB_ENVIRONMENT)" --hub-stack-instance "$(HUB_STACK_INSTANCE)"
-HUB_LIFECYCLE_DEPLOY_OPTS ?= --hub-save-stack-instance-outputs=true
+HUB_LIFECYCLE_OPTS ?= --hub-environment "$(HUB_ENVIRONMENT)" --hub-stack-instance "$(HUB_STACK_INSTANCE)" \
+	--hub-sync --hub-sync-skip-parameters-and-oplog
 endif
 endif
 endif
@@ -57,7 +57,7 @@ COMPONENT_LIST := $(if $(COMPONENT),-c $(COMPONENT),)
 deploy: $(ELABORATE_FILE_FS)
 	$(hub) deploy \
 		$(ELABORATE_FILES) \
-		$(HUB_LIFECYCLE_OPTS) $(HUB_LIFECYCLE_DEPLOY_OPTS) \
+		$(HUB_LIFECYCLE_OPTS) \
 		$(HUB_OPTS) \
 		-s $(STATE_FILES) \
 		$(COMPONENT_LIST)
