@@ -52,6 +52,7 @@ lifecycle:
     - component.kubernetes-dashboard.enabled:kube-dashboard
 
 outputs:
+- name: cloud.kind
 - name: stack-k8s-eks:dns.domain
 - name: stack-k8s-eks:kubernetes.flavor
 - name: stack-k8s-eks:kubernetes.api.endpoint
