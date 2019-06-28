@@ -72,6 +72,10 @@ undeploy: $(ELABORATE_FILE_FS)
 		$(COMPONENT_LIST)
 .PHONY: undeploy
 
+sync:
+	$(hub) api instance sync $(DOMAIN_NAME) -s $(STATE_FILES) $(HUB_OPTS)
+.PHONY: sync
+
 clean:
 	-rm -f .hub/$(DOMAIN_NAME)*
 .PHONY: clean
