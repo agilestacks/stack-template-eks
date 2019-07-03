@@ -69,6 +69,8 @@ outputs:
 - name: stack-k8s-eks:cloud.vpc.worker.subnet.ids
 - name: stack-k8s-eks:cloud.vpc.worker.sg.id
 - name: stack-k8s-eks:cloud.iam.worker.instanceProfile
+- name: acm:component.tls.kind
+- name: acm:component.acm.certificateArn
 - name: cert-manager:component.tls.kind
 - name: traefik:component.ingress.protocol
 - name: traefik:component.ingress.fqdn
