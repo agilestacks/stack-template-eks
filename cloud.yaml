@@ -4,6 +4,9 @@ parameters:
 - name: cloud.region
   kind: user
   fromEnv: AWS_DEFAULT_REGION
+- name: cloud.availabilityZones
+  kind: user
+  fromEnv: EKS_ZONES
 - name: cloud.sshKey
   kind: user
   fromEnv: KEYPAIR

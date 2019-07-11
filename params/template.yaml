@@ -7,8 +7,6 @@ parameters:
     fromEnv: EKS_CLUSTER
   - name: eks.admin
     fromEnv: EKS_ADMIN
-  - name: eks.availabilityZones
-    fromEnv: EKS_ZONES
   - name: worker
     parameters:
     - name: count
