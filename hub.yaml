@@ -77,4 +77,5 @@ outputs:
 - name: traefik:component.ingress.ssoFqdn
 - name: traefik:component.ingress.urlPrefix
 - name: traefik:component.ingress.ssoUrlPrefix
+- name: dex:component.dex.issuer
 - name: kube-dashboard:component.kubernetes-dashboard.url
