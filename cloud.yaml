@@ -6,6 +6,7 @@ parameters:
   fromEnv: AWS_DEFAULT_REGION
 - name: cloud.availabilityZones
   kind: user
+  empty: allow
   fromEnv: EKS_ZONES
 - name: cloud.sshKey
   kind: user
