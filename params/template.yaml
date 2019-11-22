@@ -14,6 +14,7 @@ parameters:
       fromEnv: EKS_WORKER_INSTANCE_TYPE
     - name: spotPrice
       fromEnv: EKS_WORKER_SPOT_PRICE
+      empty: allow
 
 - name: component.acm
   parameters:
