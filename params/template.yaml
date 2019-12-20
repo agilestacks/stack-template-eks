@@ -37,6 +37,14 @@ parameters:
   - name: ssl.enabled
     value: false
 
+- name: component.cluster-autoscaler
+  parameters:
+  - name: enabled
+    value: true
+  - name: asgTagCluster
+    value: ${kubernetes.eks.cluster}
+    kind: link
+
 - name: component.dex
   parameters:
   - name: namespace

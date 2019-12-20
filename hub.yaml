@@ -21,6 +21,9 @@ components:
 - name: traefik
   source:
     dir: components/traefik
+- name: cluster-autoscaler
+  source:
+    dir: components/cluster-autoscaler
 - name: dex
   source:
     dir: components/dex
@@ -42,6 +45,7 @@ lifecycle:
   - acm
   - cert-manager
   - traefik
+  - cluster-autoscaler
   - dex
   - kube-dashboard
   - automation-tasks-namespace
@@ -49,6 +53,7 @@ lifecycle:
     optional:
     - component.acm.enabled:acm
     - component.cert-manager.enabled:cert-manager
+    - component.cluster-autoscaler.enabled:cluster-autoscaler
     - component.kubernetes-dashboard.enabled:kube-dashboard
 
 outputs:
