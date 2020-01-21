@@ -33,6 +33,12 @@ components:
 - name: automation-tasks-namespace
   source:
     dir: components/namespace
+- name: olm
+  source:
+    dir: components/olm
+- name: okd-console
+  source:
+    dir: components/okd-console
 
 requires:
 - aws
@@ -55,6 +61,8 @@ lifecycle:
     - component.cert-manager.enabled:cert-manager
     - component.cluster-autoscaler.enabled:cluster-autoscaler
     - component.kubernetes-dashboard.enabled:kube-dashboard
+    - component.olm.enabled:olm
+    - component.okd-console.enabled:okd-console
 
 outputs:
 - name: cloud.kind
@@ -83,3 +91,4 @@ outputs:
 - name: traefik:component.ingress.ssoUrlPrefix
 - name: dex:component.dex.issuer
 - name: kube-dashboard:component.kubernetes-dashboard.url
+- name: okd-console:component.okd-console.url
