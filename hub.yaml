@@ -55,6 +55,8 @@ lifecycle:
   - dex
   - kube-dashboard
   - automation-tasks-namespace
+  - olm
+  - okd-console
   requires:
     optional:
     - component.acm.enabled:acm
