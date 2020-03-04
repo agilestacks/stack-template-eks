@@ -58,6 +58,7 @@ lifecycle:
   - olm
   - okd-console
   optional:
+  - acm
   - cluster-autoscaler
   - kube-dashboard
   - olm
