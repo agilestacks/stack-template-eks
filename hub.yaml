@@ -78,6 +78,7 @@ outputs:
 - name: stack-k8s-eks:kubernetes.flavor
 - name: stack-k8s-eks:kubernetes.api.endpoint
 - name: stack-k8s-eks:kubernetes.api.caCert
+- name: stack-k8s-eks:kubernetes.api.token
 - name: stack-k8s-eks:kubernetes.eks.cluster
 - name: stack-k8s-eks:cloud.region
 - name: stack-k8s-eks:cloud.availabilityZone
