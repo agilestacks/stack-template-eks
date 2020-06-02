@@ -12,6 +12,9 @@ components:
 - name: tiller
   source:
     dir: components/tiller
+- name: external-dns
+  source:
+    dir: components/external-dns
 - name: acm
   source:
     dir: components/acm
@@ -48,6 +51,7 @@ lifecycle:
   order:
   - stack-k8s-eks
   - tiller
+  - external-dns
   - acm
   - cert-manager
   - traefik

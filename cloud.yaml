@@ -11,6 +11,12 @@ parameters:
 - name: cloud.sshKey
   kind: user
   fromEnv: KEYPAIR
+- name: cloud.aws.accessKey
+  empty: allow
+  fromEnv: DNS_CREDENTIALS_ACCESS_KEY
+- name: cloud.aws.secretKey
+  empty: allow
+  fromEnv: DNS_CREDENTIALS_SECRET_KEY
 - name: dns.domain
   kind: user
   fromEnv: DOMAIN_NAME
