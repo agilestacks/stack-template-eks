@@ -23,7 +23,7 @@ components:
     dir: components/cert-manager
 - name: traefik
   source:
-    dir: components/traefik
+    dir: components/traefik2
 - name: cluster-autoscaler
   source:
     dir: components/cluster-autoscaler
