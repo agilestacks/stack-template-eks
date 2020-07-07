@@ -24,6 +24,9 @@ components:
 - name: traefik
   source:
     dir: components/traefik2
+- name: tls-host-controller
+  source:
+    dir: components/tls-host-controller
 - name: cluster-autoscaler
   source:
     dir: components/cluster-autoscaler
@@ -55,6 +58,7 @@ lifecycle:
   - acm
   - cert-manager
   - traefik
+  - tls-host-controller
   - cluster-autoscaler
   - dex
   - kube-dashboard
