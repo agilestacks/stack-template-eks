@@ -76,6 +76,15 @@ sync:
 	$(hub) api instance sync $(DOMAIN_NAME) -s $(STATE_FILES) $(HUB_OPTS)
 .PHONY: sync
 
+ifneq ($(COMPONENT),)
+invoke: $(ELABORATE_FILE_FS)
+	$(eval , := ,)
+	$(eval WORDS := $(subst $(,), ,$(COMPONENT)))
+	@$(foreach c,$(WORDS), \
+		$(hub) invoke $(c) $(VERB) -m $(ELABORATE_FILES) -s $(STATE_FILES) $(HUB_OPTS);)
+.PHONY: invoke
+endif
+
 clean:
 	-rm -f .hub/$(DOMAIN_NAME)*
 .PHONY: clean
