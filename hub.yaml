@@ -87,6 +87,7 @@ outputs:
 - name: acm:component.tls.kind
 - name: acm:component.acm.certificateArn
 - name: cert-manager:component.tls.kind
+- name: cert-manager:component.cert-manager.defaultIssuerName
 - name: traefik:component.ingress.protocol
 - name: traefik:component.ingress.fqdn
 - name: traefik:component.ingress.ssoFqdn
