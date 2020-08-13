@@ -94,5 +94,6 @@ outputs:
 - name: traefik:component.ingress.urlPrefix
 - name: traefik:component.ingress.ssoUrlPrefix
 - name: dex:component.dex.issuer
+- name: dex:component.dex.namespace
 - name: kube-dashboard:component.kubernetes-dashboard.url
 - name: okd-console:component.okd-console.url
