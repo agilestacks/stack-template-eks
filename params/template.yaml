@@ -35,8 +35,6 @@ parameters:
     value: app
   - name: ssoUrlPrefix
     value: apps
-  - name: ssl.enabled
-    value: false
 
 - name: component.cluster-autoscaler
   parameters:
