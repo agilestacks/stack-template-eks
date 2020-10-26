@@ -2,8 +2,8 @@
 version: 1
 kind: stack
 meta:
-  name: k8s-eks-complete:1
-  brief: Complete EKS stack
+  name: eks:1
+  brief: EKS stack
 
 components:
 - name: stack-k8s-eks
